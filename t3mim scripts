@@ -1,0 +1,144 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Lifting simulator", "BloodTheme")
+
+local Tab = Window:NewTab("Main")
+
+local Section = Tab:NewSection("Main")
+
+Section:NewButton("AutoClicker", "AutoClicks for you", function()
+    
+while true do
+	wait(0.1)
+
+	local args = {
+		[1] = {
+			[1] = "GainMuscle"
+		}
+	}
+	
+	game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+	
+end
+
+
+
+end)
+
+
+Section:NewButton("AutoSell", "AutoSells for you", function()
+    
+while true do
+	wait(0.1)
+
+	local args = {
+		[1] = {
+			[1] = "SellMuscle"
+		}
+	}
+	
+	game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+	
+end
+
+
+
+
+end)
+
+Section:NewButton("Bring up shop UI", "Brings urp the shop UI.", function()
+    game:GetService("Players").LocalPlayer.PlayerGui["Main_Gui"]["UpgradeMenu_Frame"].Visible = true
+
+end)
+
+
+
+local Tab = Window:NewTab("Player")
+
+local Section = Tab:NewSection("Player")
+
+
+
+Section:NewButton("Infinite zoom", "you can zoom out of everywhere!", function()
+    game.Players.LocalPlayer.CameraMaxZoomDistance = 999999
+end)
+
+Section:NewButton("Inf jump", "jump in da sky forever!!", function()
+    game:GetService("UserInputService").JumpRequest:connect(function()
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")       
+    end)
+end)
+
+Section:NewToggle("Fov", "Fov", function(state)
+    if state then
+        game.Workspace.CurrentCamera.FieldOfView = 120
+    else
+        game.Workspace.CurrentCamera.FieldOfView = 80
+    end
+end)
+
+Section:NewButton("Fps booster", "boosts ur fps for smoother gameplay!", function()
+    -- Made by RIP#6666
+_G.Settings = {
+    Players = {
+        ["Ignore Me"] = true, -- Ignore your Character
+        ["Ignore Others"] = true -- Ignore other Characters
+    },
+    Meshes = {
+        Destroy = false, -- Destroy Meshes
+        LowDetail = true -- Low detail meshes (NOT SURE IT DOES ANYTHING)
+    },
+    Images = {
+        Invisible = true, -- Invisible Images
+        LowDetail = false, -- Low detail images (NOT SURE IT DOES ANYTHING)
+        Destroy = false, -- Destroy Images
+    },
+    ["No Particles"] = true, -- Disables all ParticleEmitter, Trail, Smoke, Fire and Sparkles
+    ["No Camera Effects"] = true, -- Disables all PostEffect's (Camera/Lighting Effects)
+    ["No Explosions"] = true, -- Makes Explosion's invisible
+    ["No Clothes"] = true, -- Removes Clothing from the game
+    ["Low Water Graphics"] = true, -- Removes Water Quality
+    ["No Shadows"] = true, -- Remove Shadows
+    ["Low Rendering"] = true, -- Lower Rendering
+    ["Low Quality Parts"] = true -- Lower quality parts
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
+end)
+
+local Tab = Window:NewTab("Teleports")
+
+local Section = Tab:NewSection("Teleports")
+
+Section:NewButton("TP to safezone", "it TP's you to safezone", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-639.467346, -52.4810028, 1830.18811, 0.273993224, -6.83607941e-05, -0.961731553, 8.73638783e-07, 1, -7.08132284e-05, 0.961731613, 1.85808749e-05, 0.273993313)
+end)
+
+Section:NewLabel("Note: im adding more teleports later, dont worry.")
+
+local Tab = Window:NewTab("Misc")
+
+local Section = Tab:NewSection("Misc")
+
+Section:NewButton("My yt", "Click to copy my yt (plz sub)", function()
+    setclipboard("T3mim scripts")
+    print(Copied)
+end)
+
+Section:NewKeybind("Hide / unhide", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+Section:NewButton("Mobile Keybord", "Recommended for fellow mobile exploiters.", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+
+end)
+
+
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+    Title = "Executed!!";
+    Text  = "T3MIM SCRIPTS";
+    Icon  = "rbxthumb://type=Asset&id=9180622670&w=150&h=150"})
+Duration = 10;
+
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/T3mimScripts/Lifting-sim/main/T3mim%20scripts"), true))()
